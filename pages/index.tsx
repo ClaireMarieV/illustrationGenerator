@@ -16,7 +16,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <Illustration width={800} height={1000}>
-          <Vine length={600} x={32} y={32} />
+          <Vine length={888} x={32} y={32} />
         </Illustration>
       </main>
     </>

@@ -7,10 +7,10 @@ const segmentLength = 100;
 
 const horizontalOffset = 20;
 
-const segment = () => {
-  return `s ${0} ${(segmentLength / 3) * 2}, ${
+const segment = (length: number = segmentLength) => {
+  return `s ${0} ${(length / 3) * 2}, ${
     (Math.random() - 0.5) * horizontalOffset
-  } ${segmentLength}`;
+  } ${length}`;
 };
 
 const Vine = ({ length, x, y }: Props) => {
@@ -20,7 +20,9 @@ const Vine = ({ length, x, y }: Props) => {
         fill="transparent"
         strokeWidth={1}
         stroke="black"
-        d={`M${x} ${y} ${segment()} ${segment()} ${segment()} ${segment()} ${segment()}`}
+        d={`M${x} ${y} ${[
+          ...Array(Math.floor(length / segmentLength)).keys(),
+        ].map(() => segment())} ${segment(length % segmentLength)}`}
       />
     </g>
   );
