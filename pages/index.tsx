@@ -4,6 +4,7 @@ import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import Illustration from "@/ui/Illustration";
 import Vine from "@/ui/Vine";
+import VinePot from "@/ui/VinePot";
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <Illustration width={800} height={1000}>
-          <Vine direction={1.15 * Math.PI} length={333} x={32} y={32} />
+          <VinePot x={20} y={20} width={333} height={150} />
         </Illustration>
       </main>
     </>
